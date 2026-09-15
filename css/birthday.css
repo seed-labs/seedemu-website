@@ -1,0 +1,143 @@
+.birthday {
+  --birthday-secondary: var(--diagram-node, var(--accent-hover));
+  --birthday-tertiary: var(--diagram-muted, var(--muted));
+  --birthday-star: color-mix(in srgb, var(--accent) 38%, transparent);
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  min-height: min(760px, 85svh);
+  place-items: center;
+  overflow: hidden;
+  padding: 100px 24px;
+  background: var(--bg);
+  color: var(--text);
+  text-align: center;
+}
+
+.birthday__stars,
+.birthday__canvas,
+.birthday__glow {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.birthday__stars {
+  z-index: -3;
+  background:
+    radial-gradient(1.5px 1.5px at 10% 15%, var(--birthday-star), transparent),
+    radial-gradient(1px 1px at 25% 35%, var(--birthday-star), transparent),
+    radial-gradient(1.5px 1.5px at 40% 20%, var(--birthday-star), transparent),
+    radial-gradient(1px 1px at 55% 45%, var(--birthday-star), transparent),
+    radial-gradient(1.5px 1.5px at 70% 30%, var(--birthday-star), transparent),
+    radial-gradient(1px 1px at 85% 50%, var(--birthday-star), transparent),
+    radial-gradient(1px 1px at 15% 60%, var(--birthday-star), transparent),
+    radial-gradient(1.5px 1.5px at 30% 70%, var(--birthday-star), transparent),
+    radial-gradient(1px 1px at 65% 75%, var(--birthday-star), transparent),
+    radial-gradient(1.5px 1.5px at 80% 60%, var(--birthday-star), transparent),
+    radial-gradient(1px 1px at 45% 85%, var(--birthday-star), transparent),
+    radial-gradient(1.5px 1.5px at 75% 20%, var(--birthday-star), transparent);
+}
+
+.birthday__canvas { z-index: -2; }
+
+.birthday__glow {
+  z-index: -1;
+  background: radial-gradient(ellipse at center, var(--bg) 0%, color-mix(in srgb, var(--bg) 65%, transparent) 45%, transparent 78%);
+}
+
+.birthday__content { max-width: 850px; }
+
+.birthday__eyebrow {
+  margin: 0 0 28px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.birthday h1 {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(44px, 7.5vw, 92px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -.055em;
+}
+
+.birthday h1 span { color: var(--accent); }
+
+.birthday__message {
+  margin: 32px auto;
+  color: var(--muted);
+  font-size: clamp(15px, 1.7vw, 18px);
+  line-height: 1.8;
+}
+
+.birthday__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 38px;
+}
+
+.birthday__link,
+.birthday__toggle {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  border: 1px solid var(--accent-line);
+  border-radius: 5px;
+  padding: 11px 20px;
+  background: var(--card);
+  color: var(--text);
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .2s, border-color .2s;
+}
+
+.birthday__toggle[hidden] { display: none; }
+.birthday__link:hover,
+.birthday__toggle:hover { background: var(--accent-soft); border-color: var(--accent); color: var(--accent-hover); }
+.birthday__link:focus-visible,
+.birthday__toggle:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+
+.birthday__status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.birthday[data-motion="playing"] .birthday__stars {
+  animation: birthday-twinkle 4s ease-in-out infinite alternate;
+}
+
+@keyframes birthday-twinkle {
+  from { opacity: .45; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  .birthday { min-height: 650px; padding: 80px 22px; }
+  .birthday__message br { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .birthday[data-motion="playing"] .birthday__stars { animation: none; }
+  .birthday__link,
+  .birthday__toggle { transition: none; }
+}

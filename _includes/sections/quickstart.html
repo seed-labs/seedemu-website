@@ -1,0 +1,4 @@
+<section class="section section-alt" id="quickstart"><div class="container quickstart-grid">
+  <div class="quickstart-copy"><span class="eyebrow">05 / QUICK START</span><h2>Small setup.<br>Big possibilities.</h2><p>{{ site.data.site_content.quickstart.description }}</p><p class="requirements">{{ site.data.site_content.quickstart.prerequisites }}</p><ol>{% for instruction in site.data.site_content.quickstart.instructions %}<li>{{ instruction }}</li>{% endfor %}</ol><a class="text-link" href="{{ site.data.site_content.quickstart.source_url }}">Read the setup guide {% include components/icon.html name="external" %}</a></div>
+  <div>{% include components/code-block.html label="Bash / your first Internet" code=site.data.site_content.quickstart.code %}<p class="code-note">Uses the repository's simple AS example. For Docker Compose v2, use <code>docker compose</code> in place of <code>docker-compose</code>.</p></div>
+</div></section>

@@ -1,0 +1,15 @@
+<section class="birthday" aria-labelledby="birthday-title" data-birthday data-motion="paused">
+  <div class="birthday__stars" aria-hidden="true"></div>
+  <canvas class="birthday__canvas" data-birthday-canvas aria-hidden="true"></canvas>
+  <div class="birthday__glow" aria-hidden="true"></div>
+  <div class="birthday__content">
+    <p class="birthday__eyebrow">A small celebration</p>
+    <h1 id="birthday-title">Happy birthday,<br><span>Professor.</span></h1>
+    <p class="birthday__message">Thank you for your thoughtful guidance and generous support.<br>Here's to another year of curiosity, discovery, and joy.</p>
+    <div class="birthday__actions">
+      <a class="birthday__link" href="{{ '/' | relative_url }}">Back to SEED <span aria-hidden="true">&rarr;</span></a>
+      <button class="birthday__toggle" type="button" data-birthday-toggle aria-pressed="false" hidden>Start fireworks</button>
+    </div>
+    <p class="birthday__status" data-birthday-status role="status" aria-live="polite"></p>
+  </div>
+</section>

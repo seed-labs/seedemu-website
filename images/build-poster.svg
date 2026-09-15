@@ -1,0 +1,6 @@
+---
+layout: null
+theme: terracotta
+---
+{% assign theme = site.data.themes | where: 'id', page.theme | first %}
+{% include components/build-poster.svg colors=theme.colors %}

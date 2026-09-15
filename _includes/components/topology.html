@@ -1,0 +1,12 @@
+<div class="topology-panel">
+  <div class="topology-toolbar"><span>{% include components/icon.html name="network" %} A SMALL INTERNET</span><span class="topology-label"><span class="status-dot"></span> Example topology</span></div>
+  <div class="topology-map" role="img" aria-label="Example topology: four autonomous systems connect through Internet Exchange 100 using BGP. AS 150 hosts a Web service on 10.150.0.0/24; AS 151 hosts a DNS server on 10.151.0.0/24; AS 152 hosts a blockchain on 10.152.0.0/24; AS 153 hosts a security lab on 10.153.0.0/24.">
+    <svg class="topology-links" viewBox="0 0 600 320" preserveAspectRatio="none" aria-hidden="true"><path d="M133 78 300 160 467 78M133 242 300 160 467 242"/><path class="packet-path" d="M133 78 300 160 467 242"/></svg>
+    <div class="topology-node node-a"><span class="node-as">AS 150 <i></i></span><strong>{% include components/icon.html name="globe" %} Web service</strong><span>10.150.0.0/24</span></div>
+    <div class="topology-node node-b"><span class="node-as">AS 151 <i></i></span><strong>{% include components/icon.html name="network" %} DNS server</strong><span>10.151.0.0/24</span></div>
+    <div class="topology-node node-c"><span class="node-as">AS 152 <i></i></span><strong>{% include components/icon.html name="layers" %} Blockchain</strong><span>10.152.0.0/24</span></div>
+    <div class="topology-node node-d"><span class="node-as">AS 153 <i></i></span><strong>{% include components/icon.html name="shield" %} Security lab</strong><span>10.153.0.0/24</span></div>
+    <div class="exchange"><span>{% include components/icon.html name="network" %}</span><strong>IX 100</strong><small>BGP PEERING</small></div>
+  </div>
+  <div class="topology-legend"><span><i class="legend-dot"></i> Autonomous system</span><span><i class="legend-line"></i> Peering connection</span><span>4 AS · 1 IXP</span></div>
+</div>

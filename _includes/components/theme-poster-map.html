@@ -1,0 +1,11 @@
+{%- for theme in site.data.themes -%}
+  {%- if forloop.first -%}{
+  {%- endif -%}
+  {%- if theme.id == 'terracotta' -%}
+    {%- assign poster_path = '/images/build-poster.svg' -%}
+  {%- else -%}
+    {%- assign poster_path = '/images/build-poster-' | append: theme.id | append: '.svg' -%}
+  {%- endif -%}
+  {{ theme.id | jsonify }}:{{ poster_path | relative_url | jsonify }}{%- unless forloop.last -%},{%- endunless -%}
+  {%- if forloop.last -%}}{%- endif -%}
+{%- endfor -%}

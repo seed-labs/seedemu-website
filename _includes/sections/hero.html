@@ -1,0 +1,14 @@
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-grid" aria-hidden="true"></div>
+  {% include components/hero-network.html %}
+  <div class="container hero-content">
+    <span class="hero-badge"><span class="status-dot"></span> Open-source Internet emulation <span class="badge-divider">/</span> Built for discovery</span>
+    <h1 id="hero-title"><span class="hero-name">SEED</span><span class="hero-name-caption">INTERNET EMULATOR</span><span class="hero-headline">A small Internet.<br><span>A world of possibilities.</span></span></h1>
+    <p>Build real networks. Run real applications.<br>A programmable Internet for security research and education,<br class="desktop-break"> right on your own machine.</p>
+    <div class="hero-actions"><a class="button button-primary" href="#quickstart">Start building {% include components/icon.html name="arrow" %}</a><a class="button button-outline" href="https://github.com/seed-labs/seed-emulator">{% include components/icon.html name="github" %} View on GitHub</a><a class="hero-demo" href="#demo">{% include components/icon.html name="play" %} Watch demo</a></div>
+    <div class="hero-tech"><span>DESCRIBE</span> Python <i>→</i><span>COMPOSE</span> Networks &amp; services <i>→</i><span>RUN</span> Containers</div>
+  </div>
+  <a class="scroll-hint" href="#overview">EXPLORE THE PLATFORM {% include components/icon.html name="down" %}</a>
+  <div class="hero-corner" aria-hidden="true"><span class="status-dot"></span> Your Internet starts here</div>
+</section>
+<div class="tech-strip"><div class="container tech-strip-inner">{% for stat in site.data.site_content.stats %}<div><span class="tech-plus" aria-hidden="true">+</span><strong>{{ stat.value }}</strong><span>{{ stat.label }}</span></div>{% endfor %}</div></div>

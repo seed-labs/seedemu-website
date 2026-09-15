@@ -1,0 +1,7 @@
+<article class="feature-card">
+  <span class="card-icon">{% include components/icon.html name=include.item.icon %}</span>
+  <span class="card-number">0{{ include.index }}</span>
+  <h3>{{ include.item.title }}</h3>
+  <p>{{ include.item.description }}</p>
+  {% include components/tags.html items=include.item.tags %}
+</article>

@@ -1,0 +1,5 @@
+<section class="section section-alt" id="features"><div class="container">
+  {% include components/section-heading.html eyebrow="02 / CAPABILITIES" title="Real building blocks.<br>Endless combinations." description="From Internet infrastructure to application services, compose the environment your next experiment needs." %}
+  <div class="card-grid">{% for item in site.data.site_content.capabilities %}{% include components/card.html item=item index=forloop.index %}{% endfor %}</div>
+  {% unless page.nav_key == 'capabilities' %}<div class="section-tail"><span>One framework, from the network layer to the application.</span><a class="text-link" href="{{ '/capabilities.html' | relative_url }}">Explore capabilities {% include components/icon.html name="arrow" %}</a></div>{% endunless %}
+</div></section>

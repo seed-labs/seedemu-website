@@ -1,5 +1,11 @@
-{% include header.html %}
-{% include content_start.html %}
-	{{ content }}
-{% include content_end.html %}
-{% include footer.html %}
+<!doctype html>
+<html lang="en">
+  <head>{% include head.html %}</head>
+  <body class="{% if page.home %}is-home{% else %}is-page{% endif %}">
+    <a class="skip-link" href="#main">Skip to content</a>
+    {% include header.html %}
+    <main id="main">{{ content }}</main>
+    {% include footer.html %}
+    {% include scripts.html %}
+  </body>
+</html>

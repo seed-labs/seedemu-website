@@ -1,33 +1,9 @@
-
-
-<!-- Footer -->
-<footer class="w3-container w3-padding-32 w3-light-gray w3-center w3-opacity">  
-Copyright &copy; Wenliang Du, wedu@acm.org
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div>{% include components/brand.html %}<p>A small Internet.<br>A world of possibilities.</p></div>
+    <div class="footer-links"><span>Explore</span><a href="{{ '/why.html' | relative_url }}">Why SEED</a><a href="{{ '/capabilities.html' | relative_url }}">Capabilities</a><a href="{{ '/cases.html' | relative_url }}">Use cases</a></div>
+    <div class="footer-links"><span>Resources</span><a href="https://github.com/seed-labs/seed-emulator">GitHub {% include components/icon.html name="external" %}</a><a href="https://github.com/seed-labs/seed-emulator/tree/master/docs">Documentation {% include components/icon.html name="external" %}</a><a href="https://github.com/seed-labs/seed-emulator/issues">Report an issue {% include components/icon.html name="external" %}</a></div>
+    <div class="footer-note"><span class="status-dot"></span> Open source. Open possibilities.<p>For security education, network research,<br>and hands-on experimentation.</p></div>
+  </div>
+  <div class="container footer-bottom"><span>SEED Internet Emulator · Wenliang Du's team</span><span>Research &amp; Education <span class="footer-cross">+</span> Zhejiang University</span><div class="footer-actions">{% include components/language-toggle.html %}<a href="#main">Back to top ↑</a></div></div>
 </footer>
-
-<script>
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-
-// Used to toggle the menu on medium screens when clicking on the menu button
-function myMediumFunction() {
-  var x = document.getElementById("navDemoMedium");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-
-</script>
-
-</body>
-</html>
-

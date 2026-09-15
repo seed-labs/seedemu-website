@@ -1,0 +1,12 @@
+---
+layout: null
+---
+/* Palette values are shared with the theme picker through Jekyll data. */
+{% for theme in site.data.themes %}
+{% if forloop.first %}:root,
+{% endif %}:root[data-theme="{{ theme.id }}"] {
+  color-scheme: {{ theme.scheme }};
+  --brand-logo-filter: {% if theme.scheme == 'dark' %}invert(1) hue-rotate(180deg){% else %}none{% endif %};
+{% for color in theme.colors %}  --{{ color[0] }}: {{ color[1] }};
+{% endfor %}}
+{% endfor %}

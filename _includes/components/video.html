@@ -1,0 +1,11 @@
+{% if include.theme_posters %}{% capture poster_map %}{% include components/theme-poster-map.html %}{% endcapture %}{% endif %}
+<figure class="video-panel">
+  <div class="panel-bar"><span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>{{ include.label }}</span><span class="panel-badge">DEMO</span></div>
+  <video controls muted playsinline preload="none"{% if include.poster %} poster="{{ include.poster | relative_url }}"{% endif %}{% if include.theme_posters %} data-theme-posters="{{ poster_map | strip | escape }}"{% endif %} aria-label="{{ include.label | escape }}">
+    {% if include.webm %}<source src="{{ include.webm | relative_url }}" type="video/webm">{% endif %}
+    <source src="{{ include.src | relative_url }}" type="video/mp4">
+    Your browser does not support embedded video. <a href="{{ include.src | relative_url }}">Download the demo</a>.
+  </video>
+  <p class="video-error" hidden role="status">Playback is unavailable in this browser. <a href="{{ include.src | relative_url }}">Open the video</a>.</p>
+  <figcaption>{{ include.caption }}</figcaption>
+</figure>

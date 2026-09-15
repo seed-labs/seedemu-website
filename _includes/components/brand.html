@@ -1,0 +1,8 @@
+<a class="brand{% if include.logo %} brand--logo{% endif %}" href="{{ '/' | relative_url }}" aria-label="SEED Internet Emulator home">
+  {% if include.logo %}
+  <img class="brand-logo" src="{{ '/images/seed-labs-logo.png' | relative_url }}" alt="SEED Labs" width="150" height="46" decoding="async">
+  {% else %}
+  {% include components/brand-mark.html %}
+  <span>SEED<span class="brand-divider">/</span><span class="brand-caption">Internet Emulator</span></span>
+  {% endif %}
+</a>

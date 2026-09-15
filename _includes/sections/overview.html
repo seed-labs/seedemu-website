@@ -1,0 +1,5 @@
+<section class="section" id="overview"><div class="container">
+  {% include components/section-heading.html eyebrow="01 / OVERVIEW" title="The Internet is your<br>experiment." description=site.data.site_content.overview.description %}
+  <div class="overview-panel"><div class="overview-copy"><span class="small-label">FROM CODE TO CONNECTIVITY</span><h3>More than a topology.<br>A working Internet.</h3><p>Connect autonomous systems through Internet exchanges. Add routing, DNS, and applications. Every node runs real software in its own container.</p><a class="text-link" href="{{ '/why.html' | relative_url }}">Discover why SEED {% include components/icon.html name="arrow" %}</a><div class="overview-note">{% include components/icon.html name="layers" %}<span>Modular layers.<br>Reproducible experiments.</span></div></div>{% include components/topology.html %}</div>
+  <div class="benefit-grid">{% for item in site.data.site_content.benefits %}<article class="benefit"><span class="benefit-icon">{% include components/icon.html name=item.icon %}</span><h3>{{ item.title }}</h3><p>{{ item.description }}</p></article>{% endfor %}</div>
+</div></section>

@@ -1,0 +1,16 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="{{ site.data.themes.first.colors.bg }}">
+{% include theme-init.html %}
+<title>{% unless page.home %}{{ page.title | escape }} · {% endunless %}{{ site.title | escape }}</title>
+<meta name="description" content="{{ page.description | default: site.description | escape }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ page.title | default: site.title | escape }}">
+<meta property="og:description" content="{{ page.description | default: site.description | escape }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<link rel="icon" href="{{ '/images/seed-mark.svg' | relative_url }}" type="image/svg+xml">
+{% include components/stylesheet.html path="/css/themes.css" %}
+{% include components/stylesheet.html path="/css/site.css" %}
+{% include components/stylesheet.html path="/css/theme-picker.css" %}
+{% if page.extra_css %}{% include components/stylesheet.html path=page.extra_css %}{% endif %}

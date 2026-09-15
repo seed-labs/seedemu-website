@@ -1,0 +1,1 @@
+{%- if include.lang == 'zh-CN' -%}{{ site.data.zh[include.text] | default: include.text | escape }}{%- else -%}{{ include.text | escape }}{%- endif -%}

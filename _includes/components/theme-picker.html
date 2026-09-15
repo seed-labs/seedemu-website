@@ -1,0 +1,21 @@
+<div class="theme-picker" data-theme-picker hidden>
+  <button class="theme-toggle" type="button" aria-expanded="false" aria-controls="theme-panel" aria-label="Color theme: {{ site.data.themes.first.name }}">
+    <span class="theme-current-swatch" aria-hidden="true"></span>
+    <span>Theme</span>
+    {% include components/icon.html name="down" %}
+  </button>
+  <div class="theme-panel" id="theme-panel" hidden>
+    <fieldset class="theme-options">
+      <legend>Choose a color theme</legend>
+      {% for theme in site.data.themes %}
+      <label class="theme-option" for="theme-{{ theme.id }}">
+        <span class="theme-option-swatch" style="--swatch-bg: {{ theme.colors.bg }}; --swatch-accent: {{ theme.colors.accent }}; --swatch-text: {{ theme.colors.text }}" aria-hidden="true"></span>
+        <span class="theme-option-copy"><strong id="theme-name-{{ theme.id }}">{{ theme.name }}</strong><small id="theme-description-{{ theme.id }}">{{ theme.description }}</small></span>
+        <input type="radio" id="theme-{{ theme.id }}" name="color-theme" value="{{ theme.id }}" aria-labelledby="theme-name-{{ theme.id }}" aria-describedby="theme-description-{{ theme.id }}"{% if forloop.first %} checked{% endif %}>
+      </label>
+      {% endfor %}
+    </fieldset>
+    <p class="theme-hint" data-theme-hint>Your choice is saved in this browser.</p>
+  </div>
+  <span class="visually-hidden" data-theme-status role="status"></span>
+</div>

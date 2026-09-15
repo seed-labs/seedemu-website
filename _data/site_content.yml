@@ -1,0 +1,124 @@
+overview:
+  eyebrow: "A programmable Internet for research and education"
+  title: "Build an Internet you can experiment with."
+  description: "Bring autonomous systems, routing, DNS, and real applications into one reproducible environment. Describe your experiment in Python, then run a small Internet in containers."
+
+benefits:
+  - icon: "network"
+    title: "Go beyond the topology"
+    description: "Connect routing, name resolution, and application services to study how the Internet works as a complete system."
+  - icon: "shield"
+    title: "Make room for experiments"
+    description: "Explore routing attacks, malware propagation, and distributed systems in a controlled lab environment."
+  - icon: "code"
+    title: "Build once. Run again."
+    description: "Keep your topology and services in Python so experiments can be shared, adjusted, and reproduced."
+
+capabilities:
+  - icon: "network"
+    title: "Internet infrastructure"
+    description: "Assemble autonomous systems, Internet exchanges, routers, hosts, and networks into a connected Internet."
+    tags: ["Autonomous systems", "IXPs", "BGP"]
+  - icon: "globe"
+    title: "Routing and DNS"
+    description: "Follow routes across networks and build DNS hierarchies, from root and TLD servers to authoritative services."
+    tags: ["Routing", "Peering", "DNS"]
+  - icon: "layers"
+    title: "Real applications"
+    description: "Run application software inside the emulated network, including Web services and blockchain nodes."
+    tags: ["Web", "Ethereum", "Monero"]
+  - icon: "shield"
+    title: "Security experiments"
+    description: "Study BGP prefix hijacking, the Morris worm, botnets, and anonymous communication in repeatable scenarios."
+    tags: ["BGP hijacking", "Botnets", "Tor"]
+  - icon: "box"
+    title: "Container deployment"
+    description: "Compile experiment descriptions into container configurations for Docker or Kubernetes environments."
+    tags: ["Docker", "Kubernetes", "Python SDK"]
+  - icon: "code"
+    title: "Composable by design"
+    description: "Combine infrastructure, routing, and service layers. Bind services to nodes and adapt the same building blocks to new experiments."
+    tags: ["Layers", "Bindings", "Reusable components"]
+
+workflow:
+  - title: "Describe your Internet"
+    description: "Use Python to create autonomous systems, networks, hosts, routers, and Internet exchanges."
+  - title: "Connect the layers"
+    description: "Add routing and services, then bind application roles to nodes in your topology."
+  - title: "Compile the environment"
+    description: "Generate the container files and configuration needed to build your experiment."
+  - title: "Run and explore"
+    description: "Start the containers, interact with real services, and use Internet Map to observe network activity."
+
+cases:
+  - category: "Education"
+    title: "Turn Internet concepts into hands-on labs."
+    description: "Give students an environment where they can trace DNS queries, inspect BGP routes, and connect protocol behavior to security outcomes."
+    tags: ["Networking courses", "DNS labs", "BGP hijacking", "Blockchain labs"]
+  - category: "Research"
+    title: "Put your next idea to the test."
+    description: "Create controlled scenarios for protocol studies and distributed systems research. Adjust the topology, reproduce an event, and inspect the result."
+    tags: ["Protocol evaluation", "AS relationships", "PeeringDB", "Distributed systems"]
+  - category: "Demonstrations"
+    title: "Make network behavior visible."
+    description: "Use topology views, packet flows, and recorded experiments to explain Internet events in lectures and project demonstrations."
+    tags: ["Internet Map", "Packet flows", "Topology views", "Recorded demos"]
+
+scenarios:
+  - icon: "network"
+    title: "BGP exploration and hijacking"
+    description: "Connect autonomous systems through Internet exchanges, then observe route propagation and the effects of a hijacked prefix."
+    tags: ["BGP", "Routing", "Prefix hijacking"]
+  - icon: "globe"
+    title: "DNS infrastructure"
+    description: "Build root, TLD, and authoritative DNS servers to follow the resolution process and explore DNS security."
+    tags: ["DNS hierarchy", "Name resolution", "Security labs"]
+  - icon: "layers"
+    title: "Blockchain and smart contracts"
+    description: "Deploy real blockchain software in the emulated Internet and study how nodes and smart contracts behave in a controlled network."
+    tags: ["Ethereum", "Monero", "Smart contracts"]
+  - icon: "code"
+    title: "The Morris worm"
+    description: "Recreate the classic Morris worm scenario in a lab to observe propagation paths and discuss defensive responses."
+    tags: ["Malware propagation", "Network observation", "Security education"]
+  - icon: "shield"
+    title: "Botnet experiments"
+    description: "Use botnet scenarios, including Mirai, to examine propagation and command-and-control behavior across an emulated network."
+    tags: ["Mirai", "Botnets", "Command and control"]
+  - icon: "box"
+    title: "Tor and anonymous communication"
+    description: "Add Tor to the experiment environment and explore anonymous communication paths within a small Internet."
+    tags: ["Tor", "Anonymous communication", "Network services"]
+
+stats:
+  - value: "Python"
+    label: "Describe your experiment"
+  - value: "AS + IXP"
+    label: "Model Internet structure"
+  - value: "BGP + DNS"
+    label: "Run Internet protocols"
+  - value: "Containers"
+    label: "Bring the network to life"
+
+quickstart:
+  eyebrow: "Your first experiment"
+  title: "From a few commands to a small Internet."
+  description: "Start with the simple autonomous system example in the SEED Emulator repository."
+  prerequisites: "Install Git, Python 3, Docker, and Docker Compose. Run these commands in a Bash-compatible shell."
+  instructions:
+    - "Clone the project and load its development environment."
+    - "Generate the simple AS example, then build and start its containers."
+    - "Explore more examples and visualization setup in the official guide."
+  code: |
+    git clone https://github.com/seed-labs/seed-emulator.git
+    cd seed-emulator
+    source development.env
+    cd examples/A00-simple-as
+    python3 ./simple-as.py
+    cd output
+    docker-compose build
+    docker-compose up
+  source_label: "Official getting started guide"
+  source_url: "https://github.com/seed-labs/seed-emulator#getting-started"
+  resources_label: "Explore SEED labs"
+  resources_url: "https://seedsecuritylabs.org/emulator/"

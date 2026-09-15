@@ -1,0 +1,4 @@
+<script src="{{ '/js/theme.js' | relative_url }}" defer></script>
+<script src="{{ '/js/site.js' | relative_url }}" defer></script>
+{% if page.extra_js %}<script src="{{ page.extra_js | relative_url }}" defer></script>{% endif %}
+{% include language.html %}

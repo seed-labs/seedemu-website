@@ -1,0 +1,19 @@
+<svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+{% case include.name %}
+{% when 'arrow' %}<path d="M4 12h16m-6-6 6 6-6 6"/>
+{% when 'external' %}<path d="M7 17 17 7M7 7h10v10"/>
+{% when 'down' %}<path d="m6 9 6 6 6-6"/>
+{% when 'menu' %}<path d="M4 6h16M4 12h16M4 18h16"/>
+{% when 'play' %}<path d="m9 5 11 7-11 7z"/>
+{% when 'code' %}<path d="m7 7-5 5 5 5m10-10 5 5-5 5m-3-14-4 18"/>
+{% when 'layers' %}<path d="m12 3 10 5-10 5L2 8zm-10 9 10 5 10-5M2 16l10 5 10-5"/>
+{% when 'shield' %}<path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/>
+{% when 'box' %}<path d="m12 2 9 5v10l-9 5-9-5V7zm-9 5 9 5 9-5m-9 5v10M7.5 4.5l9 5"/>
+{% when 'globe' %}<circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/>
+{% when 'book' %}<path d="M12 5v16M3 3c4 0 7 1 9 3 2-2 5-3 9-3v15c-4 0-7 1-9 3-2-2-5-3-9-3z"/>
+{% when 'terminal' %}<rect x="2" y="4" width="20" height="16" rx="3"/><path d="m6 9 3 3-3 3m7 0h5"/>
+{% when 'copy' %}<rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V3H3v13h5"/>
+{% when 'github' %}<path d="M9 19c-4 1-4-2-6-2m12 5v-4c0-1 .2-2-1-3 4-.4 7-2 7-6 0-2-1-3-2-4 .2-1 .2-2 0-3 0 0-2 0-4 2a13 13 0 0 0-6 0C7 2 5 2 5 2c-.2 1-.2 2 0 3-1 1-2 2-2 4 0 4 3 5.6 7 6-1 1-1 2-1 3v4"/>
+{% else %}<rect x="9" y="2" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="16" y="16" width="6" height="6" rx="1"/><path d="M12 8v4M5 16v-4h14v4"/>
+{% endcase %}
+</svg>

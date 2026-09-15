@@ -1,46 +1,32 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+title: SEED Internet Emulator
+description: >-
+  Build realistic Internet environments for research, education, and experimentation
+  with the SEED Internet Emulator.
+url: "https://gandlfst.github.io"
+baseurl: ""
+lang: en
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: SEED Emulator
-email: wedu@acm.org
-description: >- # this means to ignore newlines until "baseurl:"
-  SEED Internet Emulator,
-  Blockchain emulator
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://www.seedemulator.org" 
-#twitter_username: jekyllrb
-#github_username:  jekyll
-
-# Build settings
 markdown: kramdown
-theme: minima
-plugins:
-  - jekyll-feed
+highlighter: rouge
+strict_front_matter: true
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
 
-
-# Additional Site Settings
-example-url: "https://github.com/seed-labs/seed-emulator/tree/master/examples"
+exclude:
+  - .bundle
+  - .github
+  - .gitignore
+  - AGENTS.md
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - package.json
+  - package-lock.json
+  - scripts
+  - vendor
+  - video/README.md
