@@ -1,0 +1,3 @@
+# Personal project-site settings; the production configuration stays unchanged.
+url: "https://gandlfst.github.io"
+baseurl: "/seed-emulator-www"
