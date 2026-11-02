@@ -1,0 +1,53 @@
+name: Deploy personal preview
+
+on:
+  push:
+    branches: ["development"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: personal-pages
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    if: github.repository == 'Gandlfst/seed-emulator-www' && github.ref == 'refs/heads/development'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby and install dependencies
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: Build the personal preview
+        run: |
+          bundle exec jekyll build --config _config.yml,_config.preview.yml --trace
+          rm -f _site/CNAME
+        env:
+          JEKYLL_ENV: production
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload the built site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy the personal preview
+        id: deployment
+        uses: actions/deploy-pages@v4
