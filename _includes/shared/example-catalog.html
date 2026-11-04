@@ -4,7 +4,9 @@
   <nav class="portal-breadcrumb" aria-label="Breadcrumb"><a href="{{ project_info.url | relative_url }}">{{ project_info.title }}</a><span aria-hidden="true">/</span><span aria-current="page">Examples</span></nav>
   <section class="examples-intro" aria-labelledby="examples-title">
     <h1 id="examples-title">{{ page.title }}</h1>
-    <p>Browse hands-on examples from the <a href="{{ site.data.shared.examples.readme_url }}">SEED Emulator repository {% include shared/icon.html name="external" %}</a>.</p>
+    {% if page.parent_project == 'internet' %}
+      <p>Browse hands-on examples from the <a href="{{ site.data.shared.examples.readme_url }}">SEED Emulator repository {% include shared/icon.html name="external" %}</a>.</p>
+    {% endif %}
   </section>
   {% if example_records.size > 0 %}
   <div class="examples-workspace">
